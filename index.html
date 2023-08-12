@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Insurance Stats</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/ManageCarData.js"></script>
+    <script src="Scripts/ManageDriverData.js"></script>
+    <script src="Scripts/ManagerClaimsData.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Sites.css" rel="stylesheet" />
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Scripts/NavigateTables.js"></script>
+
+
+</head>
+<body onLoad="chooseGet(); CarAmountStats();">
+	<nav>
+		<a href="#stats" onclick="Statistics()">Show Statistics</a>
+		<a href="#add" onclick="Add()">Add Data</a>
+        <a href="#doc" onclick="Documentation()">Documentation</a>
+	</nav>
+
+    <div id="Content">
+        <h2>Chart View</h2>
+        <label for="chartSelect">Choose a Graph:</label>
+        <select onchange="chooseChart()" id="chartSelect" name="chartselect" id="chartselect">
+            <option value="cars">Private Vs Commercial</option>
+            <option value="drivers">Age Vs Financial</option>
+            <option value="claims">Accepted Claim Amount</option>
+            <option value="cartypes">Car Types</option>
+            </select>
+        <div id="chart">
+
+        </div>
+
+
+
+        <div class="col-md-12">
+            <h2>Table View</h2>
+            <label for="tables">Choose a table:</label>
+
+            <select onchange="chooseGet()" id="getselect" name="tables" id="tables">
+            <option value="drivers">Drivers</option>
+            <option value="cars">Cars</option>
+            <option value="claims">Claims</option>
+            </select>
+            <div id="alldata" class="row">
+        </div>
+    </div >
+    
+
+
+</body>
+
+<script src="Scripts/TableManager.js"></script>
+
+</html>
